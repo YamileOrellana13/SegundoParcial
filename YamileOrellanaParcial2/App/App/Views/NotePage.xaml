@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.NotePage">
+ 
+    <ContentPage.Content>
+   <ScrollView>
+        <StackLayout
+                Padding="15"
+                BackgroundColor="White">
+
+            <Image
+                    Source="">
+            </Image>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    
+                </Grid.ColumnDefinitions>
+
+                <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Content:"
+                        TextColor="Black">
+                </Label>
+
+                <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Content,Mode=TwoWay}"
+                        Placeholder="Ingrese su Content">
+                </Entry>
+                
+            </Grid>
+            <ActivityIndicator
+                    IsRunning="{Binding IsRunning}">
+            </ActivityIndicator>
+            <Button
+                    BackgroundColor="Navy"
+                    Text="Insertar"
+                    Command="{Binding InsertarCommand,Mode=TwoWay}"
+                    IsEnabled="{Binding IsEnabled}"
+                    TextColor="White">
+            </Button>
+        </StackLayout>
+   </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
