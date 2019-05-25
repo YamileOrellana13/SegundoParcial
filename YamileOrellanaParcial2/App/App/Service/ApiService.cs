@@ -10,7 +10,7 @@ namespace apo.app.Services
     using Plugin.Connectivity;
     using Models;
 
-    public class ApiService
+    public class apiService
     {
         public async Task<Response> CheckConnection()
         {
@@ -24,7 +24,7 @@ namespace apo.app.Services
             }
 
            
-            bool isReachable = VerifyConnectionURL("http://xxx.azurewebsites.net/");
+            bool isReachable = VerifyConnectionURL("https://notesplc.azurewebsites.net");
             if (!isReachable)
             {
                 return new Response
@@ -85,7 +85,7 @@ namespace apo.app.Services
             }
         }
 
-    public async Task<Response> Get<T>(
+    public async Task<Response> Post<T>(
         string urlBase,
         string servicePrefix,
         string controller,
