@@ -4,17 +4,23 @@ using System.Text;
 
 namespace App.Models
 {
+
+    using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Product
+    public class Notes
     {
         [Key]
-        public int ProductId { get; set; }
+        public int NotesId { get; set; }
+        public string Contents { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
-        [Required]
-        [Display(Name = "Product Name")]
-        public string Name { get; set; }
+        public Notes()
+        {
+            this.CreatedDate = DateTime.Now;
+            this.ModifiedDate = DateTime.Now;
+        }
 
-        public double Price { get; set; }
     }
 }
