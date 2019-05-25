@@ -1,4 +1,4 @@
-namespace apo.app.Services
+namespace App.Services
 {
     using System;
     using System.Collections.Generic;
@@ -8,9 +8,9 @@ namespace apo.app.Services
     using System.Threading.Tasks;
     using Newtonsoft.Json;
     using Plugin.Connectivity;
-    using Models;
+    using global::App.Models;
 
-    public class apiService
+    public class ApiService
     {
         public async Task<Response> CheckConnection()
         {
@@ -85,7 +85,12 @@ namespace apo.app.Services
             }
         }
 
-    public async Task<Response> Post<T>(
+        internal Task<TokenResponse> Post<T>(string v1, string content, string v2, string v3)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Response> Post<T>(
         string urlBase,
         string servicePrefix,
         string controller,
@@ -136,7 +141,7 @@ namespace apo.app.Services
             }
         }
 
-        public async Task<Response> Get<T>(
+        public async Task<Response> Post<T>(
             string urlBase,
             string servicePrefix,
             string controller,
